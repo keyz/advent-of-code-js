@@ -1,6 +1,6 @@
 /*
  * hmm. these guys are not so efficient at the moment
- * but generators are so cool...
+ * but generators are so cool!
  */
 
 import { input03 } from './inputs';

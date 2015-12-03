@@ -11,7 +11,7 @@ const getCombinations = (ls) => ls.reduce((res, x, idx) => [
 ], []);
 
 const sorter = (f) => (ls) => { // not-in-place sorting
-  // [...bla] gets compiled down to [].concat(bla)
+  // babel compiles `[...seq]` down to `[].concat(seq)`
   return [...ls].sort(f);
 };
 

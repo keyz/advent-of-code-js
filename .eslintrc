@@ -10,7 +10,6 @@
     "__DEV__": true
   },
   "rules": {
-    "no-console": 0,
-    "id-length": 0
+    "no-console": 0
   }
 }
