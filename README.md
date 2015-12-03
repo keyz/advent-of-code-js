@@ -1,2 +1,2 @@
-# advent-of-code
+# advent-of-code-js
 http://adventofcode.com/
