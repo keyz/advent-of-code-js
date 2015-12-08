@@ -1,10 +1,9 @@
 /*
- * hmm. these guys are not so efficient at the moment
- * but generators are so cool!
+ * generators, yeah
  */
 
 import { input03 } from './inputs';
-import { polyForEach } from './Poly';
+import { polyReduce } from './Poly';
 
 const handlers = {
   '>': ([x, y]) => [x + 1, y],
@@ -17,7 +16,7 @@ function* stepperGen(startPos) { // you said infinity
   let pos = startPos;
   const cache = {};
 
-  while (1) { // here it is
+  while (1) { // eslint-disable-line no-constant-condition
     const posStr = JSON.stringify(pos, null, 0);
     cache[posStr] = typeof cache[posStr] === 'undefined' ? 1 : cache[posStr] + 1;
 
@@ -30,39 +29,26 @@ function* stepperGen(startPos) { // you said infinity
 
 const step1 = (str) => {
   const santa = stepperGen([0, 0]);
-  let scores = santa.next().value;
 
-  polyForEach(
+  return Object.keys(polyReduce(
     str,
-    (inst) => { scores = santa.next(inst).value; }
-  );
-
-  return Object.keys(scores).length;
+    (_, inst) => santa.next(inst).value,
+    santa.next().value,
+  )).length;
 };
-
-console.log(step1(input03));
 
 const step2 = (str) => {
   const santa = stepperGen([0, 0]);
   const robo = stepperGen([0, 0]);
-  let santaScores = santa.next().value;
-  let roboScores = robo.next().value;
 
-  polyForEach(
+  return Object.keys(Object.assign({}, ...polyReduce(
     str,
-    (inst, idx) => {
-      if (idx % 2) {
-        santaScores = santa.next(inst).value;
-      } else {
-        roboScores = robo.next(inst).value;
-      }
-    }
-  );
-
-  return Object.keys({
-    ...santaScores,
-    ...roboScores,
-  }).length;
+    (res, inst, idx) => idx % 2 ?
+      [santa.next(inst).value, res[1]] :
+      [res[0], robo.next(inst).value],
+    [santa.next().value, robo.next().value],
+  ))).length;
 };
 
+console.log(step1(input03));
 console.log(step2(input03));

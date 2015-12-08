@@ -7,8 +7,6 @@ export const step1 = (str) => polyReduce(
   0
 );
 
-console.log(step1(input01));
-
 export const step2 = (str) => {
   const loop = (floor, idx) => {
     const nextFloor = str[idx] === '(' ? floor + 1 : floor - 1;
@@ -23,4 +21,5 @@ export const step2 = (str) => {
   return loop(0, 0);
 };
 
+console.log(step1(input01));
 console.log(step2(input01));

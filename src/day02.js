@@ -33,8 +33,6 @@ export const step1 = (str) => {
   return polySum(lines.map((dimension) => formula(sort(dimension))));
 };
 
-console.log(step1(input02));
-
 export const step2 = (str) => {
   // [[x, y, z], ...]
   const lines = parser(str);
@@ -48,4 +46,5 @@ export const step2 = (str) => {
   return polySum(lines.map((dimension) => formula(sort(dimension))));
 };
 
+console.log(step1(input02));
 console.log(step2(input02));
