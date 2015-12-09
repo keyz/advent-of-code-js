@@ -2647,7 +2647,7 @@ NOT ac -> ad
 1 AND ht -> hu
 NOT hn -> ho`;
 
-export const input08 = `"sjdivfriyaaqa\xd2v\"k\"mpcu\"yyu\"en"
+export const input08 = String.raw`"sjdivfriyaaqa\xd2v\"k\"mpcu\"yyu\"en"
 "vcqc"
 "zbcwgmbpijcxu\"yins\"sfxn"
 "yumngprx"

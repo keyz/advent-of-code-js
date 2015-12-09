@@ -5,6 +5,7 @@ import * as day04 from './day04';
 import * as day05 from './day05';
 import * as day06 from './day06';
 import * as day07 from './day07';
+import * as day08 from './day08';
 
 import {
   input01,
@@ -14,6 +15,7 @@ import {
   input05,
   input06,
   input07,
+  input08,
 } from './inputs';
 
 console.log(day01.step1(input01));
@@ -36,3 +38,6 @@ console.log(day06.step2(input06));
 
 console.log(day07.step1(input07));
 console.log(day07.step2(input07));
+
+console.log(day08.step1(input08));
+console.log(day08.step2(input08));
