@@ -8,11 +8,11 @@ export const polyForEach = polyMaker(Array.prototype.forEach);
 export const polySum = (seq) => polyReduce(
   seq,
   (res, x) => res + x,
-  0
+  0,
 );
 
 export const polyProd = (seq) => polyReduce(
   seq,
   (res, x) => res * x,
-  1
+  1,
 );

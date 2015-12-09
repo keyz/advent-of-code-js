@@ -40,7 +40,7 @@ const parser = (lines) => lines.split('\n').map((line) => {
 
   if (tokens.length === 1) {
     return {
-      [target]: tokens[0],
+      [target]: tokens[0], // x
     };
   } else if (tokens.length === 2) {
     return {
@@ -49,7 +49,7 @@ const parser = (lines) => lines.split('\n').map((line) => {
   }
 
   return {
-    [target]: [tokens[1], tokens[0], tokens[2]],
+    [target]: [tokens[1], tokens[0], tokens[2]], // [OP, x, y]
   };
 }).reduce((res, singleObj) => ({
   ...singleObj,

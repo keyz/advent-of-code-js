@@ -19,5 +19,5 @@ export const step1 = (inp) => polySum(inp.split('\n').map(
 ));
 
 export const step2 = (inp) => polySum(inp.split('\n').map(
-  (rawLine) => JSON.stringify(rawLine).length - rawLine.length,
+  (rawLine) => JSON.stringify(rawLine).length - rawLine.length, // JSON.stringify FTW
 ));
