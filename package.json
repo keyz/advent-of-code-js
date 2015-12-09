@@ -29,11 +29,22 @@
     "nodemon": "^1.8.1"
   },
   "dependencies": {
+    "babel-polyfill": "^6.3.14",
     "blueimp-md5": "^1.1.1"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "testFileExtensions": ["es6", "js"],
-    "moduleFileExtensions": ["js", "json", "es6"]
+    "testFileExtensions": [
+      "js"
+    ],
+    "setupEnvScriptFile": "<rootDir>/jestEnv.js",
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/babel-*",
+      "<rootDir>/node_modules/blueimp-md5"
+    ]
   }
 }

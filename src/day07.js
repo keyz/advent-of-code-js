@@ -1,5 +1,4 @@
 // oh yeah this is just an interpreter
-import { input07 } from './inputs';
 
 const isNum = (str) => !isNaN(str);
 const tryParseInt = (str) => isNum(str) ? parseInt(str, 10) : str;
@@ -9,7 +8,10 @@ const operators = {
   OR: (x, y) => x | y,
   LSHIFT: (x, y) => x << y,
   RSHIFT: (x, y) => x >> y,
-  NOT: (x) => ~x,
+  NOT: (x) => {
+    const not = ~x;
+    return not < 0 ? not + 65536 : not;
+  },
 };
 
 const valueOf = (exp, instEnv, cacheEnv) => {
@@ -54,8 +56,6 @@ const parser = (lines) => lines.split('\n').map((line) => {
   ...res,
 }), {});
 
-const step1 = (inp) => valueOf('a', parser(inp), {});
-const step2 = (inp) => valueOf('a', parser(inp), { b: 46065 });
-
-console.log(step1(input07));
-console.log(step2(input07));
+export const lookup = (target) => (inp) => valueOf(target, parser(inp), {});
+export const step1 = (inp) => valueOf('a', parser(inp), {});
+export const step2 = (inp) => valueOf('a', parser(inp), { b: 46065 });

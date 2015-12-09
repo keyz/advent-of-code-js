@@ -2,6 +2,7 @@
   "parser": "babel-eslint",
   "extends": "airbnb/base",
   "env": {
+    "jest": true,
     "mocha": true,
     "browser": true,
     "node": true,

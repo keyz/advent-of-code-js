@@ -2,7 +2,6 @@
  * generators, yeah
  */
 
-import { input03 } from './inputs';
 import { polyReduce } from './Poly';
 
 const handlers = {
@@ -27,7 +26,7 @@ function* stepperGen(startPos) { // you said infinity
   }
 }
 
-const step1 = (str) => {
+export const step1 = (str) => {
   const santa = stepperGen([0, 0]);
 
   return Object.keys(polyReduce(
@@ -37,7 +36,7 @@ const step1 = (str) => {
   )).length;
 };
 
-const step2 = (str) => {
+export const step2 = (str) => {
   const santa = stepperGen([0, 0]);
   const robo = stepperGen([0, 0]);
 
@@ -49,6 +48,3 @@ const step2 = (str) => {
     [santa.next().value, robo.next().value],
   ))).length;
 };
-
-console.log(step1(input03));
-console.log(step2(input03));

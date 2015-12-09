@@ -1,4 +1,3 @@
-import { input02 } from './inputs';
 import { polySum, polyProd } from './Poly';
 
 /*
@@ -45,6 +44,3 @@ export const step2 = (str) => {
 
   return polySum(lines.map((dimension) => formula(sort(dimension))));
 };
-
-console.log(step1(input02));
-console.log(step2(input02));

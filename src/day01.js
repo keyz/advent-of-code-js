@@ -1,4 +1,3 @@
-import { input01 } from './inputs';
 import { polyReduce } from './Poly';
 
 export const step1 = (str) => polyReduce(
@@ -20,6 +19,3 @@ export const step2 = (str) => {
 
   return loop(0, 0);
 };
-
-console.log(step1(input01));
-console.log(step2(input01));
