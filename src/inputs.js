@@ -2978,3 +2978,5 @@ Straylight to Arbre = 14
 AlphaCentauri to Arbre = 46`;
 
 export const input10 = `1113222113`;
+
+export const input11 = `vzbxkghb`;
